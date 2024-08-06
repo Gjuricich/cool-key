@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --primary-color: #39393a;
+    --secondary-color: #ff8552;
+    --tertiary-color: #04dcd1;
+    --quaternary-color: #e6e6e6;
+    --quinary-color: #fafbf8;
+    --senary-color: #000000;
+    --gradient-colors: linear-gradient(43deg, #eeb32a 10%, #ff8552 48%, #00d4ff 100%);
+
+    --primary-dark-color: #585858;
+    --secondary-dark-color: #bbbbbb;
+
+    --font-Mulish: 'Mulish', 'sans-serif';
+}
