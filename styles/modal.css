@@ -1,0 +1,94 @@
+.dialog {
+    padding: 0.5rem 2rem;
+    background: var(--quinary-color);
+    max-width: 25rem;
+    padding-top: 2rem;
+    border-radius: 1.25rem;
+    border: 0;
+    box-shadow: 0 0.31rem 1.9rem 0 rgb(0 0 0 / 50%);
+    animation: fadeIn 0.5s ease both;
+
+    &::backdrop {
+        animation: fadeIn 0.5s ease both;
+        background: rgb(255 255 255 / 40%);
+        z-index: 2;
+        backdrop-filter: blur(1.25rem);
+    }
+
+    .x {
+        filter: grayscale(1);
+        border: none;
+        background: none;
+        position: absolute;
+        top: 0.94rem;
+        right: 0.6rem;
+        transition: ease filter, transform 0.3s;
+        cursor: pointer;
+        transform-origin: center;
+
+        &:hover {
+            filter: grayscale(0);
+            transform: scale(1.1);
+        }
+    }
+
+    h2 {
+        font-weight: 600;
+        font-size: 2rem;
+        padding-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.3rem;
+        padding: 0.5rem 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 8.8rem;
+    background-color: var(--primary-dark-color);
+    color: var(--quinary-color);
+    text-align: center;
+    border-radius: 6px;
+    padding: 0.3125rem;
+    position: absolute;
+    z-index: 1;
+    bottom: 110%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -3px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--primary-dark-color) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
