@@ -1,0 +1,140 @@
+@media (max-width: 768px) {
+
+    .header {
+        padding: 1rem 2%;
+    }
+
+    .header__menu {
+        gap: 0.1rem;
+    }
+
+    .header__menu__link {
+        font-size: 1.25rem;
+    }
+
+    .encryptor__content__textareas {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.7rem;
+        width: 70%;
+    }
+
+    textarea::placeholder {
+        font-size: 74%;
+    }
+
+    .encryptor__content__textareas__container {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 140%;
+    }
+    
+    .encryptor__content__buttons {
+        justify-content: center;
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+
+    .textarea__buttons {
+        gap: 1.5rem;
+    }
+
+    .textarea__buttons__container__icon {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+
+    .button {
+        padding: 0.5rem 1.2rem;
+        font-size: 1rem;
+        width: auto;
+    }
+
+    .dialog {
+        width: 50%;
+    }
+
+    .footer {
+        font-size: 1rem;
+    }
+
+    .footer__link__icon {
+        width: 1rem;
+        height: 1rem;
+    }
+
+}
+
+@media (max-width: 375px) {
+
+    .header {
+        padding: 0.5rem 1%;
+    }
+
+    .header__menu {
+        gap: 0.25rem;
+    }
+
+    .header__menu__link {
+        font-size: 1rem;
+    }
+
+
+    .header, .encryptor, .footer {
+        margin: 0;
+        padding: 0;
+    }
+
+    .encryptor {
+        padding: 1rem 2%;
+        width: 100%;
+    }
+
+    .textarea__buttons__container__icon {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    h1 {
+        font-size: 100%;
+    }
+
+    .encryptor__content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .encryptor__content__buttons {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .textarea {
+        height: 8rem;
+    }
+
+    .button {
+        padding: auto;
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .footer {
+        margin-top: auto;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .footer__links {
+        margin-top: 0.5rem;
+    }
+
+    .footer__link {
+        gap: 0.25rem;
+        margin-top: 0.25rem;
+    }
+}
