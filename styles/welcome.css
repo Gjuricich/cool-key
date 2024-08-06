@@ -1,0 +1,133 @@
+body {
+    box-sizing: border-box;
+    font-family: var(--font-Mulish);
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    background-color: var(--quinary-color);
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.welcome-screen {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.welcome-screen__image {
+    width: 62%;
+    object-fit:cover;
+    height: 99.99vh;
+    background-color: var(--tertiary-color);
+}
+
+.welcome-screen__content {
+    width: 38%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.welcome-screen__content__title {
+    font-size: 1.25rem;
+    font-family: var(--font-Mulish);
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.welcome-screen__content__title__animated-text {
+    border-right: 0.125rem solid var(--senary-color);
+    overflow: hidden;
+    display: inline-block;
+    color: var(--tertiary-color);
+    animation: typing 5s steps(7, end) infinite, blink 0.71s step-end infinite;
+}
+
+.welcome-screen__content__text {
+    font-family: var(--font-Mulish);
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: var(--primary-color);
+}
+
+.welcome-screen__content__link {
+    background-color: var(--quinary-color);
+    color: var(--secondary-color);
+    border: 3px solid var(--secondary-color);
+    border-radius: 17px;
+    padding: 0.75rem 1.7rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    font-family: var(--font-Mulish);
+    font-weight: 850;
+    text-decoration: none;
+}
+
+.welcome-screen__content__link:hover {
+    background-color: var(--secondary-color);
+    color: var(--quinary-color);
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        border-color: transparent;
+    }
+
+    35% {
+        border-color: var(--senary-color);
+    }
+}
+
+@media (max-width: 769px) {
+    .welcome-screen {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .welcome-screen__image {
+        width: 100%;
+        object-fit: contain;
+        height: 50vh;
+    }
+
+    .welcome-screen__content {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .welcome-screen__content__title {
+        font-size: 1rem;
+    }
+
+    .welcome-screen__image {
+        width: 100%;
+        object-fit: contain;
+        height: 30vh;
+    }
+
+    .welcome-screen__content__text {
+        font-size: 1rem;
+    }
+
+    .welcome-screen__content__link {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+}
