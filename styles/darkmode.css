@@ -1,0 +1,66 @@
+.dark-mode .encryptor {
+    background-color: var(--primary-color);
+    color: var(--quinary-color);
+}
+
+.dark-mode .textarea {
+    background-color: var(--primary-dark-color);
+    color: var(--quinary-color);
+    border-color: var(--quinary-color);
+}
+
+.dark-mode .textarea:hover {
+    border-color: var(--secondary-color);
+}
+
+.dark-mode .textarea__buttons__container__icon {
+    color: var(--quinary-color);
+}
+
+.dark-mode .textarea__buttons__container__icon:hover {
+    color: var(--secondary-color);
+}
+
+.dark-mode textarea::placeholder {
+    color: var(--secondary-dark-color);
+}
+
+.dark-mode .button {
+    background-color: transparent;
+    color: var(--quinary-color);
+    border: 1px solid var(--quinary-color);
+}
+
+.dark-mode .button:hover {
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+}
+
+.dark-mode .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    background-color: var(--quinary-color);
+    color: var(--primary-dark-color);
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 120%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.dark-mode .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -3px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--quinary-color) transparent transparent transparent;
+}
