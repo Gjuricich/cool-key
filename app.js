@@ -37,6 +37,50 @@ function replacement(text, include, replacement) {
     return text;
 }
 
+function clearTextArea() {
+    document.querySelector('#text1').value = '';
+    document.querySelector('#text2').value = '';
+}
+
+
+function addListDialogText(text) {
+    const li = document.createElement('li');
+    li.textContent = text;
+    document.getElementById('dialog-text-list').appendChild(li);
+}
+
+
+function validateText() {
+    const text = document.getElementById('text1').value;
+    const validateUppercase = /[A-Z]/;
+    const validateSpecialCharacters = /[^a-z\s]/;
+    const dialog = document.getElementById('dialog');
+    const textList = document.getElementById('dialog-text-list');
+    const title = document.getElementById('dialog-title');
+
+    textList.innerHTML = '';
+    title.innerHTML = '';
+    title.textContent = 'Error';
+
+    if (validateUppercase.test(text)) {
+        addListDialogText('Uppercase letters are not allowed');
+        clearTextArea();
+        dialog.showModal();
+        return false;
+    }
+
+    if (validateSpecialCharacters.test(text)) {
+        addListDialogText('Special characters are not allowed');
+        clearTextArea();
+        dialog.showModal();
+        return false;
+    }
+
+    dialog.close();
+    return true;
+}
+
+
 
 
 
