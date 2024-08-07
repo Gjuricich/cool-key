@@ -23,7 +23,7 @@ function decrypt() {
     validateText();
     const text = document.getElementById("text1").value;
     let decrypt = text.toLowerCase();
-    decrypt = replacement(decrypt,codes,vowels);
+    decrypt = replacement(decrypt, codes, vowels);
     document.querySelector('#text2').value = decrypt;
     return;
 };
@@ -85,7 +85,6 @@ function rulesDialog() {
     const textList = document.getElementById('dialog-text-list');
     const title = document.getElementById('dialog-title');
 
-
     textList.innerHTML = '';
     title.innerHTML = '';
     title.textContent = 'Rules';
@@ -94,6 +93,26 @@ function rulesDialog() {
     dialog.showModal();
     return;
 
+}
+
+function copyText() {
+    const text = document.getElementById("text2");
+    if (text.value.trim() === "") {
+        var tooltip = document.getElementById("tooltip");
+        tooltip.innerHTML = "Empty message";
+    }
+    else {
+        text.select();
+        text.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(text.value);
+        var tooltip = document.getElementById("tooltip");
+        tooltip.innerHTML = "Copied! ";
+    }
+}
+
+function outCopyText() {
+    var tooltip = document.getElementById("tooltip");
+    tooltip.innerHTML = "Copy to clipboard";
 }
 
 
