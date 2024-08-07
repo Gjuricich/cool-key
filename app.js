@@ -19,6 +19,15 @@ function encrypt() {
     return;
 };
 
+function decrypt() {
+    validateText();
+    const text = document.getElementById("text1").value;
+    let decrypt = text.toLowerCase();
+    decrypt = replacement(decrypt,codes,vowels);
+    document.querySelector('#text2').value = decrypt;
+    return;
+};
+
 function replacement(text, include, replacement) {
     for (let i = 0; i < include.length; i++) {
         if (text.includes(include[i])) {
