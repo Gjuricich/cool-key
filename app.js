@@ -80,6 +80,22 @@ function validateText() {
     return true;
 }
 
+function rulesDialog() {
+    const dialog = document.getElementById('dialog');
+    const textList = document.getElementById('dialog-text-list');
+    const title = document.getElementById('dialog-title');
+
+
+    textList.innerHTML = '';
+    title.innerHTML = '';
+    title.textContent = 'Rules';
+    addListDialogText('Uppercase letters and special characters will not be accepted.');
+    addListDialogText('The maximum character length allowed is 1000.');
+    dialog.showModal();
+    return;
+
+}
+
 
 
 
