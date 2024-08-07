@@ -28,6 +28,8 @@ function decrypt() {
     return;
 };
 
+// Función que recibe el texto a analizar, los valores que debe incluir dicho texto y los
+// reemplazos correspondientes a los valores que se encuentren.
 function replacement(text, include, replacement) {
     for (let i = 0; i < include.length; i++) {
         if (text.includes(include[i])) {
@@ -37,19 +39,20 @@ function replacement(text, include, replacement) {
     return text;
 }
 
+//Limpia los text área.
 function clearTextArea() {
     document.querySelector('#text1').value = '';
     document.querySelector('#text2').value = '';
 }
 
-
+//Crea y asigna el texto en el listado del modal.
 function addListDialogText(text) {
     const li = document.createElement('li');
     li.textContent = text;
     document.getElementById('dialog-text-list').appendChild(li);
 }
 
-
+// Función que valida mayúsculas y caracteres especiales en el texto.
 function validateText() {
     const text = document.getElementById('text1').value;
     const validateUppercase = /[A-Z]/;
@@ -58,11 +61,14 @@ function validateText() {
     const textList = document.getElementById('dialog-text-list');
     const title = document.getElementById('dialog-title');
 
+
+    //Limpia mensajes anteriores
     textList.innerHTML = '';
     title.innerHTML = '';
     title.textContent = 'Error';
 
     if (validateUppercase.test(text)) {
+        // Asigna el texto al modal
         addListDialogText('Uppercase letters are not allowed');
         clearTextArea();
         dialog.showModal();
@@ -70,6 +76,7 @@ function validateText() {
     }
 
     if (validateSpecialCharacters.test(text)) {
+        // Asigna el texto al modal
         addListDialogText('Special characters are not allowed');
         clearTextArea();
         dialog.showModal();
@@ -80,13 +87,16 @@ function validateText() {
     return true;
 }
 
+//Función que asigna el texto del modal de reglas
 function rulesDialog() {
     const dialog = document.getElementById('dialog');
     const textList = document.getElementById('dialog-text-list');
     const title = document.getElementById('dialog-title');
 
+    // Limpia mensajes anteriores
     textList.innerHTML = '';
     title.innerHTML = '';
+    // Se asigna la estructura de texto que tendrá el modal.
     title.textContent = 'Rules';
     addListDialogText('Uppercase letters and special characters will not be accepted.');
     addListDialogText('The maximum character length allowed is 1000.');
@@ -95,6 +105,7 @@ function rulesDialog() {
 
 }
 
+//Función que maneja el ícono de copiar y actualiza el mensaje del tooltip.
 function copyText() {
     const text = document.getElementById("text2");
     if (text.value.trim() === "") {
@@ -110,11 +121,14 @@ function copyText() {
     }
 }
 
+//Luego de copiar el texto actualiza el mensaje del tooltip.
 function outCopyText() {
     var tooltip = document.getElementById("tooltip");
     tooltip.innerHTML = "Copy to clipboard";
 }
 
+//Función que maneja el modo oscuro/claro y modifica el display de los íconos
+//según el modo seleccionado.
 function encryptorMode() {
     const darkModeButton = document.getElementById('dark-mode');
     const lightModeButton = document.getElementById('light-mode');
