@@ -115,6 +115,16 @@ function outCopyText() {
     tooltip.innerHTML = "Copy to clipboard";
 }
 
+function encryptorMode() {
+    const darkModeButton = document.getElementById('dark-mode');
+    const lightModeButton = document.getElementById('light-mode');
+    const isDarkMode = document.body.classList.contains('dark-mode');
+
+    document.body.classList.toggle('dark-mode');
+    darkModeButton.style.display = isDarkMode ? 'inline' : 'none';
+    lightModeButton.style.display = isDarkMode ? 'none' : 'inline';
+}
+
 
 
 
